@@ -20,7 +20,7 @@ executeCommand(){
     printf "$result"
 }
 
-executeCommand
+# executeCommand
 communicate
 
 echo ">>> bye bye"

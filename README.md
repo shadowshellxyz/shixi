@@ -9,6 +9,27 @@ $ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 $ sudo python3 get-pip.py  
 ```
 
+- 替换pip源
+
+``` shell
+~ mkdir ~/.pip
+~ vi ~/.pip/pip.conf
+```
+复制下面的代码
+``` shell
+[global]
+index-url = https://mirrors.aliyun.com/pypi/simple
+```
+
+国内其他pip源，清华的５分钟同步一次官网，建议使用
+
+清华：https://pypi.tuna.tsinghua.edu.cn/simple
+中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/
+华中理工大学：http://pypi.hustunique.com/
+山东理工大学：http://pypi.sdutlinux.org/
+豆瓣：http://pypi.douban.com/simple/
+————————————————
+
 2. 安装 python3
 
 ```

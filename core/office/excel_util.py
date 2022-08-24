@@ -3,7 +3,6 @@
 
 """
 pip3 install xlrd==1.2.0
-pip3 install xlwt==1.2.0
 
 @author: Shadow
 """
@@ -33,6 +32,14 @@ class ExcelUtil:
                 rowlist.append(data_sheet.cell_value(row_index, col_index))
             list.append(rowlist)
         return list
+    
+    def read2(self):
+        prompt_msg = "please input your file path : "
+        file_path = input(prompt_msg)
+        while file_path == None:
+            input(prompt_msg)
+        self.read(file_path)
+        return 
 
     # 输出数据
     def write(self, data, file_path, title):
@@ -47,3 +54,5 @@ class ExcelUtil:
                 data_sheet.cell(row_index + 1, col_index + 1, data[row_index][col_index])
         # 保存文件
         workbook.save(file_path)
+
+
