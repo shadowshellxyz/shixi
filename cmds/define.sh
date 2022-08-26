@@ -4,7 +4,7 @@
 execute_command(){
     command=$*
     # command is empty
-    if [ -z "$command"]
+    if [[ -z "$command" ]]
         then 
         command="jarvis"
     fi 
