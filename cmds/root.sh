@@ -11,19 +11,24 @@ jarvis_hello(){
     echo $msg
 }
 
-jarvis_ready(){
+jarvis_date(){
+    msg=`date "+%Y-%m-%d %A %H:%M:%S"`
+    echo $msg
+}
+
+jarvis_prepare(){
     pull_note
 }
 
-jarvis_bye(){
+jarvis_done(){
     push_note
     push_jarvis
 }
 
-jarvis_start_work(){
+jarvis_work_prepare(){
     pull_worknotes
 }
 
-jarvis_complete_work(){
+jarvis_work_doneq(){
     push_worknotes
 }
