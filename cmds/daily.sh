@@ -1,7 +1,8 @@
 #!/bin/bash
 
-timestamp=`date "+%Y-%m-%d %H:%M:%S"`
-commit_msg="auto backup, timestamp is $timestamp."
+timestamp=`date "+%Y%m%d%H%M%S"`
+commit_msg="$timestamp auto backup."
+
 # update notes
 pull_note(){
     cd $JARVIS_HOME/Shadow/Note

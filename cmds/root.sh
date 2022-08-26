@@ -6,6 +6,11 @@ source $JARVIS_HOME/WorkNotes/.autoscript.sh
 # define commands path
 JARVIS_COMMANDS_PATH=$JARVIS_HOME/Shadow/jarvis/cmds
 
+jarvis_hello(){
+    msg="hello"
+    echo $msg
+}
+
 jarvis_ready(){
     pull_note
 }

@@ -5,7 +5,7 @@
 
 ~ vi ~/.bash_profile
 
-~ export JARVIS_HOME=/Users/shadow/workbench/Shadow
-~ source $JARVIS_HOME/jarvis/cmds/jarvis_setup.sh
+~ export JARVIS_HOME=/Users/shadow/workbench
+~ source $JARVIS_HOME/Shadow/jarvis/setup.sh
 
  ```
