@@ -20,7 +20,7 @@ execute_command(){
 alias jarvis=execute_command
 
 # source files
-source $JARVIS_COMMANDS_PATH/root.sh
+source $JARVIS_HOME/Shadow/jarvis/cmds/root.sh
 
 # define commands
 declare -A routing_table

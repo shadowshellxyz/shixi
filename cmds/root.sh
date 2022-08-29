@@ -1,10 +1,10 @@
 #!/bin/bash
 
-source $JARVIS_COMMANDS_PATH/daily.sh
-source $JARVIS_HOME/WorkNotes/.autoscript.sh
-
 # define commands path
 JARVIS_COMMANDS_PATH=$JARVIS_HOME/Shadow/jarvis/cmds
+
+source $JARVIS_COMMANDS_PATH/daily.sh
+source $JARVIS_HOME/WorkNotes/.autoscript.sh
 
 jarvis_hello(){
     msg="hello"
