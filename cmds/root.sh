@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# define commands path
-JARVIS_COMMANDS_PATH=$JARVIS_HOME/Shadow/jarvis/cmds
-
 source $JARVIS_COMMANDS_PATH/daily.sh
 source $JARVIS_HOME/WorkNotes/.autoscript.sh
 
@@ -18,17 +15,19 @@ jarvis_date(){
 
 jarvis_prepare(){
     pull_note
+    jarvis_work_prepare
 }
 
 jarvis_done(){
     push_note
     push_jarvis
+    jarvis_work_done
 }
 
 jarvis_work_prepare(){
     pull_worknotes
 }
 
-jarvis_work_doneq(){
+jarvis_work_done(){
     push_worknotes
 }
