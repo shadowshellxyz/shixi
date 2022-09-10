@@ -2,6 +2,6 @@
 # author: Shadow
 
 # source files
-source $JARVIS_HOME/Shadow/jarvis/cmds/define.sh
+source $JARVIS_HOME/Shields/jarvis/cmds/exports.sh
 
 

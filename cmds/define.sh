@@ -1,41 +1,38 @@
 #!/bin/bash
 
+# routing table
+declare -A ROUTING_TABLE
+register_command(){
+    command=$1
+    handler=$2
+    ROUTING_TABLE["$command"]=$handler
+    # echo "Register command -->> command is '$command', handler is '$handler'."
+}
+
 # execute command
 execute_command(){
     command=$*
+    # echo "command is $command"
     # command is empty
     if [[ -z "$command" ]]
         then 
         command="jarvis"
     fi 
+
     # lookup command handler
-    handler=${routing_table["$command"]}
-    # log
-    echo "command is '$command', handler is '$handler'."
-    # execute command
-    $handler
+    handler=${ROUTING_TABLE["$command"]}
+     # log
+    # echo "command is '$command', handler is '$handler'."
+    # handler is empty
+    if [[ -z "$handler" ]]
+    then 
+        echo "Invalid command: $command"
+    else
+        # execute command
+        $handler
+    fi 
 }
 
 # alias command
 alias jarvis=execute_command
-
-# define commands path
-JARVIS_COMMANDS_PATH=$JARVIS_HOME/Shadow/jarvis/cmds
-
-# source files
-source $JARVIS_COMMANDS_PATH/root.sh
-
-# define commands
-declare -A routing_table
-routing_table["jarvis"]="jarvis_hello"
-routing_table["morning"]="jarvis_prepare"
-routing_table["prepare"]="jarvis_prepare"
-routing_table["evening"]="jarvis_done"
-routing_table["done"]="jarvis_done"
-routing_table["date"]="jarvis_date"
-routing_table["work pre"]="jarvis_work_prepare"
-routing_table["work prepare"]="jarvis_work_prepare"
-routing_table["work done"]="jarvis_work_done"
-routing_table["read excel"]="python3 $JARVIS_COMMANDS_PATH/readexcel.py"
-routing_table["write excel"]="python3 $JARVIS_COMMANDS_PATH/writeexcel.py"
 
