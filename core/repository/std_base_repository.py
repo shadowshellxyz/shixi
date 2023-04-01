@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+from common.util.logging.logger_factory import LoggerFactory
+from core.repository.base_repository import BaseRepository
+
 """
 @author: ShadowShell
 """
-
-from common.util.logging.logger_factory import LoggerFactory
-
-class StdBaseService():
+class StdBaseRepository(BaseRepository):
 
     __logger = LoggerFactory().get_logger()
 
@@ -28,5 +28,4 @@ class StdBaseService():
 
     def get_logger(self):
         return self.__logger;
-    
     

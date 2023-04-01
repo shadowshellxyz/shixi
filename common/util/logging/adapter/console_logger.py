@@ -23,4 +23,4 @@ class ConsoleLogger(Logger):
         self.__log(content)
 
     def __log(self, content):
-        print("[LOGGER]%s" % content)
+        print("[LOGGER]%s" % (content))

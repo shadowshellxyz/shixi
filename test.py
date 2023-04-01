@@ -28,7 +28,8 @@ class Test():
         print(item.name)
 
         item_service = JdCpsItemService();
-        item_service.query_by_id("31218153471");
+        # item_service.query_by_id("31218153471");
+        item_service.query_list(1, 20);
 
     def test(self):
         
