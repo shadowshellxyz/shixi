@@ -1,5 +1,5 @@
 #!/bin/bash
-# author: Shadow
+# author: ShadowShell
 
 # install python dependencies
 pip3 freeze > requirements.txt

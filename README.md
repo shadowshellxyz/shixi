@@ -1,5 +1,16 @@
 
 
+# INSTALL
+
+``` shell
+$ vi  ~/.bash_profile
+$ source ~/.bash_profile
+
+export JARVIS_HOME=/Users/shadow/Workbench
+source $JARVIS_HOME/ShadowShellDotXyz/jarvis/setup.sh
+
+```
+
 # 环境
 
 1. 安装 pip

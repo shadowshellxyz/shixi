@@ -1,37 +1,50 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import numpy as np
+import sys
 
-import pandas as pd
+from common.util.exception.exception import AppException
+from common.util.logging.logger_factory import LoggerFactory
 
-import matplotlib.mlab as mlab
+from core.model.item.item import Item
+from core.model.item.price import Price
+from biz.cps.jd.jd_cps_item_service import JdCpsItemService
 
-import matplotlib.pyplot as plt
+class Test():
 
-np.random.seed(0)
+    logger = None;
 
-num_bins = 50
+    def __init__(self):
+        self.logger = LoggerFactory.get_logger(self)
 
-mu = 100
+    def test_item(self):
 
-sigma = 15
+        price = Price()
+        price.item_id = '0001'
+        print(price.item_id)
 
-x = mu + sigma * np.random.randn(500)
+        item = Item()
+        item.name = '测试商品'
+        print(item.name)
 
-#np.random.rand(n) 产生标准正态分布， 即均值为0 标准差为1 的高斯分布 扥同于 np.random.normal(0, 1, n)
+        item_service = JdCpsItemService();
+        item_service.query_by_id("31218153471");
 
-# x = mu + sigma * np.random.randn(500) 是产生500个均值为100， 方差为15 的随机数
+    def test(self):
+        
+        try:    
+            self.test_item()
+        # except AppException as e:
+        #     self.logger.error(e)
+        # except Exception as e:
+        #     self.logger.error(e)
+        except:
+            # self.logger.error(sys.exc_info()[0])
+            print(sys.exc_info())
+            raise
+        finally:
+            return
+        
 
-# 等于 x = np.random.normal(100, 15, 500)
-
-fig, ax = plt.subplots()
-
-n, bins, patches = ax.hist(x, num_bins, normed=1)
-
-#这里ax.hist()即是画柱状图的函数
-
-#x 为数据，num_bins为分隔的段数
-
-plt.show()
-
+test = Test()
+test.test()
