@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# alias jarvis.restart=source ~/.bash_profile
+# alias shixirestart=source ~/.bash_profile
 
 source $SHIXI_COMMANDS_PATH/dailycmds.sh
 # source $WORK_NOTES_HOME/.jarvis/.jarvis.sh
@@ -24,17 +24,16 @@ __date(){
 register_command "date" "__date"
 
 __prepare(){
-    pull_note
-    # jarvis_work_prepare
+    __pull_walker
+    __pull_shixi
 }
 register_command "prepare" "__prepare"
 register_command "morning" "__prepare"
 register_command "pre" "__prepare"
 
 __done(){
-    push_note
-    push_jarvis
-    # jarvis_work_done
+    __push_walker
+    __push_shixi
 }
 register_command "done" "__done"
 register_command "evening" "__done"
