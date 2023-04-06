@@ -1,40 +1,40 @@
 #!/bin/bash
 
-alias jarvis.restart=source ~/.bash_profile
+# alias jarvis.restart=source ~/.bash_profile
 
-source $JARVIS_COMMANDS_PATH/dailycmds.sh
+source $SHIXI_COMMANDS_PATH/dailycmds.sh
 # source $WORK_NOTES_HOME/.jarvis/.jarvis.sh
 
-_jarvis(){
-    jarvis_hello
-    jarvis_date
+__shixi(){
+    __hello
+    __date
 }
-register_command "jarvis" "_jarvis"
+register_command "shixi" "__shixi"
 
-jarvis_hello(){
+__hello(){
     msg="hello"
     echo $msg
 }
-register_command "hello" "jarvis_hello"
+register_command "hello" "__hello"
 
-jarvis_date(){
+__date(){
     msg=`date "+%Y-%m-%d %A %H:%M:%S"`
     echo $msg
 }
-register_command "date" "jarvis_date"
+register_command "date" "__date"
 
-jarvis_prepare(){
+__prepare(){
     pull_note
     # jarvis_work_prepare
 }
-register_command "prepare" "jarvis_prepare"
-register_command "morning" "jarvis_prepare"
-register_command "pre" "jarvis_prepare"
+register_command "prepare" "__prepare"
+register_command "morning" "__prepare"
+register_command "pre" "__prepare"
 
-jarvis_done(){
+__done(){
     push_note
     push_jarvis
     # jarvis_work_done
 }
-register_command "done" "jarvis_done"
-register_command "evening" "jarvis_done"
+register_command "done" "__done"
+register_command "evening" "__done"

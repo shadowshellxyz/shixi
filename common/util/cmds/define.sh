@@ -16,7 +16,7 @@ execute_command(){
     # command is empty
     if [[ -z "$command" ]]
         then 
-        command="jarvis"
+        command="shixi"
     fi 
 
     # lookup command handler
@@ -34,5 +34,5 @@ execute_command(){
 }
 
 # alias command
-alias jarvis=execute_command
+alias shixi=execute_command
 
