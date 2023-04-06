@@ -6,7 +6,7 @@
 # WORK_NOTES_HOME=$JARVIS_HOME/WorkNotes
 
 # source files
-source $SHADOWSHELL_HOME/shixi/common/util/cmds/exports/exports.sh
+source $SHIXI_HOME/cmds/exports/exports.sh
 
 
 
