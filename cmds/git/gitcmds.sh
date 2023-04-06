@@ -72,7 +72,7 @@ register_command "git cmt docs" "__git_commit_docs"
 __git_auto_backup(){
     timestamp=date +'%Y%m%d%H%M%S'
     git add -A
-    git commit -m $timestamp
+    git commit -m "shixi auto backup,timestamp $timestamp."
     git push origin main   
 }
 register_command "git backup" "__git_auto_backup"
