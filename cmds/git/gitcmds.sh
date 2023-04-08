@@ -1,5 +1,5 @@
 #!bin/bash
-
+# author:shadowshell
 
 # config
 
@@ -33,53 +33,38 @@ __git_config_edit(){
 }
 register_command "git cfg edit" "__git_config_edit"
 
-# read commit message
-__git_commit_message_read(){
-   read "message?Input your commit message:"
-}
+# git add & commit & push
+__git_acp(){
 
-# commit feature
-__git_commit_feature(){
-    
-   __git_commit_message_read
-   echo $message
-}
-register_command "git cmt fat" "__git_commit_feature"
+   # get current branch name
+   current_branch_name=`git rev-parse --abbrev-ref HEAD`
+   
+   # pull latest
+   git pull origin $current_branch_name
 
-# commit fix
-__git_commit_fix(){
-    
-    read "message?Input commit message:" 
-    git add *
-    git commit -m "fix: $message"
-}
-register_command "git cmt fix" "__git_commit_fix"
+   # read commit message
+   read -a commit_type -p "Input your commit type : "
+   read -a commit_message -p "Input your commit message : "
+   
+   pre_commit_message="$commit_type : $commit_message"
+   echo "You's prepare commit message is : $pre_commit_message."
 
-# commit test
-__git_commit_test(){
-    
-    read "message?Input commit message:" 
-    git add *
-    git commit -m "test: $message"
-}
-register_command "git cmt test" "__git_commit_test"
+   # git add & commit & push
+   git add -A
+   git commit -m $pre_commit_message
+   git push origin $current_branch_name
 
-# commit docs
-__git_commit_docs(){
-    
-    read "message?Input commit message:" 
-    git add *
-    git commit -m "docs: $message"
 }
-register_command "git cmt docs" "__git_commit_docs"
+register_command "git acp" "__git_acp"
 
 # auto backup
 __git_auto_backup(){
+    current_branch_name=`git rev-parse --abbrev-ref HEAD`
     timestamp=date +'%Y%m%d%H%M%S'
     git add -A
     git commit -m "shixi auto backup,timestamp $timestamp."
-    git push origin main   
+    git push origin $current_branch_name  
 }
-register_command "git backup" "__git_auto_backup"
+register_command "git bak" "__git_auto_backup"
 
 
