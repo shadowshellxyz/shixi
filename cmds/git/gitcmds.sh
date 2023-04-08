@@ -45,10 +45,10 @@ __git_acp(){
    # read commit message
    read -a commit_type -p "Input your commit type : "
    read -a commit_message -p "Input your commit message : " 
-   pre_commit_message="$commit_type : $commit_message"
+   pre_commit_message="[$commit_type]:$commit_message"
 
    # prompt
-   echo "You's prepare commit message is : $pre_commit_message."
+   echo "Your prepare commit message is : $pre_commit_message."
 
    # git add & commit & push
    git add -A
