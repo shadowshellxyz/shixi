@@ -69,7 +69,7 @@ __git_auto_backup(){
     git commit -m "shixi auto backup,timestamp $timestamp."
     git push origin $current_branch_name  
    
-    echo "\n......shixi backup ended......\n"
+    printf "\n......shixi backup ended......\n"
 }
 register_command "git bak" "__git_auto_backup"
 
