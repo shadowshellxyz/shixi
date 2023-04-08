@@ -60,7 +60,8 @@ register_command "git acp" "__git_acp"
 
 # auto backup
 __git_auto_backup(){
-    echo "......shixi backup preparing......"
+
+    printf  "\n......shixi backup preparing......\n"
 
     current_branch_name=`git rev-parse --abbrev-ref HEAD`
     timestamp=date +'%Y%m%d%H%M%S'
@@ -68,7 +69,7 @@ __git_auto_backup(){
     git commit -m "shixi auto backup,timestamp $timestamp."
     git push origin $current_branch_name  
    
-    echo "......shixi backup ended......"
+    echo "\n......shixi backup ended......\n"
 }
 register_command "git bak" "__git_auto_backup"
 
