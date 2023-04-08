@@ -44,9 +44,10 @@ __git_acp(){
 
    # read commit message
    read -a commit_type -p "Input your commit type : "
-   read -a commit_message -p "Input your commit message : "
-   
+   read -a commit_message -p "Input your commit message : " 
    pre_commit_message="$commit_type : $commit_message"
+
+   # prompt
    echo "You's prepare commit message is : $pre_commit_message."
 
    # git add & commit & push
@@ -59,11 +60,15 @@ register_command "git acp" "__git_acp"
 
 # auto backup
 __git_auto_backup(){
+    echo "......shixi backup preparing......"
+
     current_branch_name=`git rev-parse --abbrev-ref HEAD`
     timestamp=date +'%Y%m%d%H%M%S'
     git add -A
     git commit -m "shixi auto backup,timestamp $timestamp."
     git push origin $current_branch_name  
+   
+    echo "......shixi backup ended......"
 }
 register_command "git bak" "__git_auto_backup"
 
