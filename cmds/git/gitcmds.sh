@@ -1,9 +1,9 @@
 #!bin/bash
 
 
-# 配置git信息
+# config
 
-__git_config(){
+__git_config_init(){
 
    __git_config_view
 
@@ -13,16 +13,17 @@ __git_config(){
    __git_config_view
 
 }
-register_command "git config" "__git_config"
+register_command "git cfg init" "__git_config_init"
 
-# 查看配置
+# view config
 __git_config_view(){
     echo  "user.name -> `git config user.name`"
     echo  "user.email -> `git config user.email`"
 }
-register_command "git config view" "__git_config_view"
+register_command "git cfg view" "__git_config_view"
 
-__git_edit(){
+# edit config
+__git_config_edit(){
     read "user_name?Input user name:" 
     git config user.name $user_name
     read "user_email?Input user email:" 
@@ -30,14 +31,18 @@ __git_edit(){
 
     __git_config
 }
-register_command "git edit" "__git_edit"
+register_command "git cfg edit" "__git_config_edit"
+
+# read commit message
+__git_commit_message_read(){
+   read "message?Input your commit message:"
+}
 
 # commit feature
 __git_commit_feature(){
     
-    read "message?Input commit message:" 
-    git add *
-    git commit -m "feature: $message"
+   __git_commit_message_read
+   echo $message
 }
 register_command "git cmt fat" "__git_commit_feature"
 
@@ -76,3 +81,5 @@ __git_auto_backup(){
     git push origin main   
 }
 register_command "git backup" "__git_auto_backup"
+
+
