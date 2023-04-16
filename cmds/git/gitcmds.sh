@@ -62,7 +62,7 @@ register_command "git acp" "__git_acp"
 __git_backup(){
 
     # init git config
-    git cfg init
+    shixi git cfg init
 
     printf "\n\n"
     printf  "......shixi backup preparing......"

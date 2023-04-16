@@ -44,7 +44,7 @@ __done(){
     shixi git backup
 
      # backup toolkit
-    cd $SHADOWSHELL_LOCAL_HOME/toolkit
+    cd $SHADOWSHELL_LOCAL_HOME/shadowshell/toolkit
     shixi git backup
 }
 register_command "done" "__done"
