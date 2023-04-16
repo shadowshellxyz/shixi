@@ -9,5 +9,7 @@ source $SHIXI_COMMANDS_PATH/git/gitcmds.sh
 source $SHIXI_COMMANDS_PATH/python/pycmds.sh
 source $SHIXI_COMMANDS_PATH/maven/mavencmds.sh
 source $SHIXI_COMMANDS_PATH/cps.sh
+source $SHIXI_COMMANDS_PATH/auto.sh
+
 
 

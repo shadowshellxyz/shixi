@@ -2,6 +2,8 @@
 
 # alias shixirestart=source ~/.bash_profile
 
+# alias ll=`ls -la -h`
+
 source $SHIXI_COMMANDS_PATH/dailycmds.sh
 # source $WORK_NOTES_HOME/.jarvis/.jarvis.sh
 
@@ -32,8 +34,18 @@ register_command "morning" "__prepare"
 register_command "pre" "__prepare"
 
 __done(){
-    __push_walker
-    __push_shixi
+
+    # backup walker
+    cd $SHADOWSHELL_HOME/walker
+    shixi git backup
+
+    # backup shixi
+    cd $SHADOWSHELL_HOME/shixi
+    shixi git backup
+
+     # backup toolkit
+    cd $SHADOWSHELL_LOCAL_HOME/toolkit
+    shixi git backup
 }
 register_command "done" "__done"
 register_command "evening" "__done"

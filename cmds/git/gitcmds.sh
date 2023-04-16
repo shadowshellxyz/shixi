@@ -59,7 +59,7 @@ __git_acp(){
 register_command "git acp" "__git_acp"
 
 # backup
-__git_bak(){
+__git_backup(){
 
     printf "\n\n"
     printf  "......shixi backup preparing......"
@@ -75,6 +75,7 @@ __git_bak(){
     printf "......shixi backup ended......"
     printf "\n\n"
 }
-register_command "git bak" "__git_bak"
+register_command "git bak" "__git_backup"
+register_command "git backup" "__git_backup"
 
 
