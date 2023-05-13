@@ -33,11 +33,25 @@ __git_config_edit(){
 }
 register_command "git cfg edit" "__git_config_edit"
 
+# get branch name
+__git_get_branch_name(){
+    current_branch_name=`git rev-parse --abbrev-ref HEAD`
+    
+    return current_branch_name;
+}
+
+# pull
+__git_pull(){
+    current_branch_name=`__git_get_branch_name`
+    git pull origin $current_branch_name
+}
+register_command "git pull" "__git_pull"
+
 # git add & commit & push
 __git_acp(){
 
    # get current branch name
-   current_branch_name=`git rev-parse --abbrev-ref HEAD`
+   current_branch_name=__git_get_branch_name
    
    # pull latest
    git pull origin $current_branch_name
@@ -68,7 +82,7 @@ __git_backup(){
     printf  "......shixi backup preparing......"
     printf "\n\n"
 
-    current_branch_name=`git rev-parse --abbrev-ref HEAD`
+    current_branch_name=__git_get_branch_name
     timestamp=`date +'%Y%m%d%H%M%S'`
     git add -A
     git commit -m "shixi auto backup,timestamp $timestamp."
