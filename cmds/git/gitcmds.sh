@@ -51,7 +51,7 @@ register_command "git pull" "__git_pull"
 __git_acp(){
 
    # get current branch name
-   current_branch_name=__git_get_branch_name
+   current_branch_name=`__git_get_branch_name`
    
    # pull latest
    git pull origin $current_branch_name
