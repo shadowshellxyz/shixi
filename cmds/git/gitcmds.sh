@@ -57,6 +57,7 @@ __git_acp(){
    git pull origin $current_branch_name
 
    # read commit message
+   
    read -a commit_type -p "Input your commit type : "
    read -a commit_message -p "Input your commit message : " 
    pre_commit_message="[$commit_type]:$commit_message"
