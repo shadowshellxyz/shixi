@@ -1,0 +1,27 @@
+version: 1
+roots:
+  level: DEBUG
+  handlers: [console, default]
+  propagate: true
+loggers:
+  default:
+    level: DEBUG
+    handlers: [console, default]
+    propagate: true,  
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: default
+  default:
+    class: logging.handlers.RotatingFileHandler
+    level: DEBUG
+    formatter: default
+    filename: jarvis.log
+    maxBytes: 5242880
+    backupCount: 5
+    encoding: utf8
+formatters:
+  default:
+    format: '[%(asctime)s][%(name)s:%(levelname)s(%(lineno)d)]--[%(module)s]:%(message)s'
+    datefmt: '%Y-%m-%d %H:%M:%S'
