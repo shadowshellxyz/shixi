@@ -11,3 +11,6 @@ jarvis_startup_cps(){
     $SHADOWSHELL_HOME/Code/cps/startup.sh
 }
 register_command "startup cps" "jarvis_startup_cps"
+
+
+

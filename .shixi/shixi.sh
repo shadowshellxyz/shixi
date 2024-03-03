@@ -19,7 +19,7 @@ shixi_clone(){
   
   # git clone git@github.com:shadowshellxyz/walker.git
   
-  # git clone git@github.com:shadowshellxyz/toolkit.git
+   git clone git@github.com:shadowshellxyz/toolkit.git
 
 }
 

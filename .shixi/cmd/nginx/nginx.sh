@@ -29,7 +29,7 @@ nginx_cfg(){
 nginx_cfg_refresh(){
 
     alias cp='cp'
-    cp -f $SHIXI_HOME/shixi/.shixi/cmd/nginx/nginx.conf $NGINX_HOME/conf/
+    cp -f $SHIXI_HOME/walker/profession/components/nginx/conf/nginx.conf $NGINX_HOME/conf/
     alias cp='cp -i'
 }
 
